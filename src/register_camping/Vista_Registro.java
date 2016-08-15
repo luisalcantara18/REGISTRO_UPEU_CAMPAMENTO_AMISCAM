@@ -31,6 +31,7 @@ public class Vista_Registro extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,14 +45,18 @@ public class Vista_Registro extends javax.swing.JFrame {
         NyA = new javax.swing.JTextField();
         DNI = new javax.swing.JTextField();
         Edad = new javax.swing.JTextField();
-        FAC = new javax.swing.JTextField();
-        ESC = new javax.swing.JTextField();
         CICLO = new javax.swing.JTextField();
-        SEX = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        facultades = new javax.swing.JComboBox();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/campamento-2.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -96,9 +101,9 @@ public class Vista_Registro extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Ciclo :");
+        jLabel6.setText("Codigo Alumno :");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 284, 50, 20);
+        jLabel6.setBounds(10, 284, 120, 20);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,7 +115,7 @@ public class Vista_Registro extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("REGISTRO  \" AMISCAM \" \" UPEU \"");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(110, 30, 300, 21);
+        jLabel8.setBounds(130, 30, 300, 21);
         jPanel1.add(NyA);
         NyA.setBounds(160, 80, 290, 30);
 
@@ -123,19 +128,29 @@ public class Vista_Registro extends javax.swing.JFrame {
         DNI.setBounds(160, 120, 290, 30);
         jPanel1.add(Edad);
         Edad.setBounds(160, 160, 70, 30);
-        jPanel1.add(FAC);
-        FAC.setBounds(160, 200, 290, 30);
-        jPanel1.add(ESC);
-        ESC.setBounds(160, 240, 290, 30);
         jPanel1.add(CICLO);
         CICLO.setBounds(160, 280, 290, 30);
-        jPanel1.add(SEX);
-        SEX.setBounds(160, 320, 290, 30);
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/campamento-2.jpg"))); // NOI18N
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(-20, -50, 840, 520);
+        facultades.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar FACULTAD", "FIA", "FACHIED", "FACTEO", "FCS" }));
+        facultades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultadesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(facultades);
+        facultades.setBounds(160, 200, 290, 30);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar SEXO", "HOMBRE", "MUJER", "OTROS" }));
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(160, 320, 290, 30);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecicione ESCUELA", "ING DE SISTEMAS", "ING DE ALIMENTOS", "ING AMBIENTAL", "ARQUITECTURA", "PSICOLOGIA", "TEOCLOGIA", "SIENCIAS DE LA COMUNICACION", "DISEÑO GRAFICO", "ING CIVIL. ETC" }));
+        jPanel1.add(jComboBox2);
+        jComboBox2.setBounds(160, 240, 290, 30);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/stock-photo-62026879.jpg"))); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(-180, -140, 770, 590);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,6 +175,10 @@ public class Vista_Registro extends javax.swing.JFrame {
 // en este ejemplo el color de fondo es amarillo
 BUTON_REGIA.setBackground(java.awt.Color.yellow);
     }//GEN-LAST:event_BUTON_REGIActionPerformed
+
+    private void facultadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultadesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,13 +219,14 @@ BUTON_REGIA.setBackground(java.awt.Color.yellow);
     private javax.swing.JButton BUTON_REGI;
     private javax.swing.JTextField CICLO;
     private javax.swing.JTextField DNI;
-    private javax.swing.JTextField ESC;
     private javax.swing.JTextField Edad;
-    private javax.swing.JTextField FAC;
     private javax.swing.JTextField NyA;
-    private javax.swing.JTextField SEX;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox facultades;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
