@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package register_camping;
+package vista;
 
 import javax.swing.JButton;
 
