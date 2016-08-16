@@ -116,6 +116,12 @@ public class Vista_Registro extends javax.swing.JFrame {
         jLabel8.setText("REGISTRO  \" AMISCAM \" \" UPEU \"");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(130, 30, 300, 21);
+
+        NyA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NyAActionPerformed(evt);
+            }
+        });
         jPanel1.add(NyA);
         NyA.setBounds(160, 80, 290, 30);
 
@@ -179,6 +185,10 @@ BUTON_REGIA.setBackground(java.awt.Color.yellow);
     private void facultadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultadesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_facultadesActionPerformed
+
+    private void NyAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NyAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NyAActionPerformed
 
     /**
      * @param args the command line arguments
