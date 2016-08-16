@@ -15,26 +15,28 @@ import javax.swing.JOptionPane;
  * @author Daniel
  */
 public class Conexion {
-    private static final String Driver="com.mysql.jdbc.Driver";
-    private static final String Url="jdbc:mysql://localhost:3306/bd_examenfinal";
-    private static final String Usuario="root";
-    private static final String Clave="12345678";
-    private static Connection cx=null;
-    public static Connection getConexion()
-    {
+
+    private static final String Driver = "com.mysql.jdbc.Driver";
+    private static final String Url = "jdbc:mysql://localhost:3306/DBRegisterAmiscamp";
+    private static final String Usuario = "root";
+    private static final String Clave = "root";
+    private static Connection cx = null;
+
+    public static Connection getConexion() {
         try {
             Class.forName(Driver);
-            if(cx==null)
-            {
-                cx=DriverManager.getConnection(Url,Usuario,Clave);
+            if (cx == null) {
+                cx = DriverManager.getConnection(Url, Usuario, Clave);
             }
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
-        }return cx;
-    }public static void Cerrar(){
-        if(cx!=null)
-        {
-            cx=null;
         }
-    }     
+        return cx;
+    }
+
+    public static void Cerrar() {
+        if (cx != null) {
+            cx = null;
+        }
+    }
 }
