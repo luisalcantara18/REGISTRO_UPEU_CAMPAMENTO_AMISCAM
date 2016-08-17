@@ -5,11 +5,9 @@
  */
 package test;
 
-import dao.usuarioDao;
-import dto.usuarioDto;
+import dao.alumnoDao;
+import dto.alumnoDto;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 import util.Conexion;
 
 /**
@@ -17,64 +15,26 @@ import util.Conexion;
  * @author vpalacios1
  */
 public class test {
-    private static usuarioDao aO = new usuarioDao();
+    private static final alumnoDao ds=new alumnoDao();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       eliminar();
+        conex();
+        //guardar();
+        //modificar();
+        //eliminar();
+        //listar();
     }
     public static void conex(){
-        Connection cx = Conexion.getConexion();
-        if(cx!=null){
-            System.out.println("si");
-        }else{
-            System.out.println("no");
-        }
         
-    }
-    public static void validar(){
-        
-        if(aO.validarUser("dreyna", "123")){
+        Connection cx=Conexion.getConexion();
+        if(cx!=null)
+        {
             System.out.println("si");
-        }else{
-            System.out.println("no");
         }
-    }
-    public static void listar(){
-        List<usuarioDto> lista = new ArrayList<>();
-        lista = aO.readAll();
-        for(int i=0; i<lista.size();i++){
-            System.out.println(lista.get(i).getUser());
-        }
-    }
-    public static void guardar(){
-        usuarioDto dTO = new usuarioDto("hola", "123");
-        int op = aO.create(dTO);
-        if(op>0){
-            System.out.println("si");
-        }else{
-            System.out.println("no");
-        }
-    }
-    public static void modificar(){
-        usuarioDto dTO = new usuarioDto("Cesar 123", "karen");
-        dTO.setIduser(2);
-        int op = aO.update(dTO);
-        if(op>0){
-            System.out.println("si");
-        }else{
-            System.out.println("no");
-        }
-    }
-    public static void eliminar(){
-        int x = 5;
-
-        int op = aO.delete(x);
-        if(op>0){
-            System.out.println("si");
-        }else{
+        else{
             System.out.println("no");
         }
     }

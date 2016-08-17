@@ -6,19 +6,29 @@
 
 package vista;
 
+import dao.alumnoDao;
+import dto.alumnoDto;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Luis Alcántara
  */
 public class Vista_Registro extends javax.swing.JFrame {
+     alumnoDto dto=new alumnoDto();
+    alumnoDto  DTO;
+    alumnoDao DAO=new alumnoDao();
+    DefaultTableModel model;
 
     /**
      * Creates new form Vista_Registro
      */
     public Vista_Registro() {
         initComponents();
+        
+        
     }
 
     /**
@@ -36,19 +46,19 @@ public class Vista_Registro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        BUTON_REGI = new javax.swing.JButton();
+        btnregis = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        NyA = new javax.swing.JTextField();
-        DNI = new javax.swing.JTextField();
-        Edad = new javax.swing.JTextField();
-        CICLO = new javax.swing.JTextField();
-        facultades = new javax.swing.JComboBox();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
+        txtnombre = new javax.swing.JTextField();
+        txtdni = new javax.swing.JTextField();
+        txtedad = new javax.swing.JTextField();
+        txtcodigo = new javax.swing.JTextField();
+        btnfacultad = new javax.swing.JComboBox();
+        btnsexo = new javax.swing.JComboBox();
+        btnescuela = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,15 +87,15 @@ public class Vista_Registro extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 170, 50, 15);
 
-        BUTON_REGI.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        BUTON_REGI.setText("REGISTRARCE");
-        BUTON_REGI.addActionListener(new java.awt.event.ActionListener() {
+        btnregis.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        btnregis.setText("REGISTRARCE");
+        btnregis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BUTON_REGIActionPerformed(evt);
+                btnregisActionPerformed(evt);
             }
         });
-        jPanel1.add(BUTON_REGI);
-        BUTON_REGI.setBounds(190, 360, 130, 30);
+        jPanel1.add(btnregis);
+        btnregis.setBounds(190, 360, 130, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,42 +127,42 @@ public class Vista_Registro extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(130, 30, 300, 21);
 
-        NyA.addActionListener(new java.awt.event.ActionListener() {
+        txtnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NyAActionPerformed(evt);
+                txtnombreActionPerformed(evt);
             }
         });
-        jPanel1.add(NyA);
-        NyA.setBounds(160, 80, 290, 30);
+        jPanel1.add(txtnombre);
+        txtnombre.setBounds(160, 80, 290, 30);
 
-        DNI.addActionListener(new java.awt.event.ActionListener() {
+        txtdni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DNIActionPerformed(evt);
+                txtdniActionPerformed(evt);
             }
         });
-        jPanel1.add(DNI);
-        DNI.setBounds(160, 120, 290, 30);
-        jPanel1.add(Edad);
-        Edad.setBounds(160, 160, 70, 30);
-        jPanel1.add(CICLO);
-        CICLO.setBounds(160, 280, 290, 30);
+        jPanel1.add(txtdni);
+        txtdni.setBounds(160, 120, 290, 30);
+        jPanel1.add(txtedad);
+        txtedad.setBounds(160, 160, 70, 30);
+        jPanel1.add(txtcodigo);
+        txtcodigo.setBounds(160, 280, 290, 30);
 
-        facultades.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar FACULTAD", "FIA", "FACHIED", "FACTEO", "FCS" }));
-        facultades.addActionListener(new java.awt.event.ActionListener() {
+        btnfacultad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar FACULTAD", "FIA", "FACHIED", "FACTEO", "FCS" }));
+        btnfacultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                facultadesActionPerformed(evt);
+                btnfacultadActionPerformed(evt);
             }
         });
-        jPanel1.add(facultades);
-        facultades.setBounds(160, 200, 290, 30);
+        jPanel1.add(btnfacultad);
+        btnfacultad.setBounds(160, 200, 290, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar SEXO", "HOMBRE", "MUJER", "OTROS" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(160, 320, 290, 30);
+        btnsexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccionar SEXO", "HOMBRE", "MUJER", "OTROS" }));
+        jPanel1.add(btnsexo);
+        btnsexo.setBounds(160, 320, 290, 30);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecicione ESCUELA", "ING DE SISTEMAS", "ING DE ALIMENTOS", "ING AMBIENTAL", "ARQUITECTURA", "PSICOLOGIA", "TEOCLOGIA", "SIENCIAS DE LA COMUNICACION", "DISEÑO GRAFICO", "ING CIVIL. ETC" }));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(160, 240, 290, 30);
+        btnescuela.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecicione ESCUELA", "ING DE SISTEMAS", "ING DE ALIMENTOS", "ING AMBIENTAL", "ARQUITECTURA", "PSICOLOGIA", "TEOCLOGIA", "SIENCIAS DE LA COMUNICACION", "DISEÑO GRAFICO", "ING CIVIL. ETC" }));
+        jPanel1.add(btnescuela);
+        btnescuela.setBounds(160, 240, 290, 30);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/stock-photo-62026879.jpg"))); // NOI18N
         jPanel1.add(jLabel10);
@@ -172,23 +182,34 @@ public class Vista_Registro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIActionPerformed
+    private void txtdniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DNIActionPerformed
+    }//GEN-LAST:event_txtdniActionPerformed
 
-    private void BUTON_REGIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BUTON_REGIActionPerformed
-      JButton BUTON_REGIA = new JButton("BUTON_REGIA");
-// en este ejemplo el color de fondo es amarillo
-BUTON_REGIA.setBackground(java.awt.Color.yellow);
-    }//GEN-LAST:event_BUTON_REGIActionPerformed
+    private void btnregisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisActionPerformed
+        alumnoDto dto=new alumnoDto(txtnombre.getText(),Integer.parseInt(txtdni.getText()),
+                Integer.parseInt(txtedad.getText()),Integer.parseInt(txtcodigo.getText()));
+      if(DAO.create(dto)>0)
+      {
+          
+          JOptionPane.showMessageDialog(rootPane, "Se ha registrdo correctamente ! ! !");
+          
+      }
+      else
+      {
+          JOptionPane.showMessageDialog(rootPane, "No se ha registrdo correctamente ! ! !");
 
-    private void facultadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultadesActionPerformed
+      }
         // TODO add your handling code here:
-    }//GEN-LAST:event_facultadesActionPerformed
+    }//GEN-LAST:event_btnregisActionPerformed
 
-    private void NyAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NyAActionPerformed
+    private void btnfacultadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfacultadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NyAActionPerformed
+    }//GEN-LAST:event_btnfacultadActionPerformed
+
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,15 +247,11 @@ BUTON_REGIA.setBackground(java.awt.Color.yellow);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BUTON_REGI;
-    private javax.swing.JTextField CICLO;
-    private javax.swing.JTextField DNI;
-    private javax.swing.JTextField Edad;
-    private javax.swing.JTextField NyA;
+    private javax.swing.JComboBox btnescuela;
+    private javax.swing.JComboBox btnfacultad;
+    private javax.swing.JButton btnregis;
+    private javax.swing.JComboBox btnsexo;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox facultades;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -246,5 +263,9 @@ BUTON_REGIA.setBackground(java.awt.Color.yellow);
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtdni;
+    private javax.swing.JTextField txtedad;
+    private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }
