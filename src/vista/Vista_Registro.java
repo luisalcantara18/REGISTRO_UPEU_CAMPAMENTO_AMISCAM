@@ -187,19 +187,19 @@ public class Vista_Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtdniActionPerformed
 
     private void btnregisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregisActionPerformed
-        alumnoDto dto=new alumnoDto(txtnombre.getText(),Integer.parseInt(txtdni.getText()),
-                Integer.parseInt(txtedad.getText()),Integer.parseInt(txtcodigo.getText()));
-      if(DAO.create(dto)>0)
-      {
+        //alumnoDto dto=new alumnoDto(txtnombre.getText(),Integer.parseInt(txtdni.getText()),
+               // Integer.parseInt(txtedad.getText()),Integer.parseInt(txtcodigo.getText()));
+     // if(DAO.create(dto)>0)
+      //{
           
-          JOptionPane.showMessageDialog(rootPane, "Se ha registrdo correctamente ! ! !");
+       //   JOptionPane.showMessageDialog(rootPane, "Se ha registrdo correctamente ! ! !");
           
-      }
-      else
-      {
-          JOptionPane.showMessageDialog(rootPane, "No se ha registrdo correctamente ! ! !");
+      ///}
+     // else
+      //{
+          //JOptionPane.showMessageDialog(rootPane, "No se ha registrdo correctamente ! ! !");
 
-      }
+      //}
         // TODO add your handling code here:
     }//GEN-LAST:event_btnregisActionPerformed
 
